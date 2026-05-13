@@ -1,155 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAIR DO by ekkles | Live Gallery</title>
-    <style>
-        /* ELEGANT DESIGN STYLES */
-        :root {
-            --gold: #c5a059;
-            --dark: #1a1a1a;
-            --light: #f9f9f9;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
-            text-align: center;
-        }
-
-        header {
-            padding: 50px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        h1 {
-            font-weight: 300;
-            letter-spacing: 8px;
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-        }
-
-        .subtitle {
-            color: var(--gold);
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        /* LIVE FEED CONTAINER */
-        #gallery-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* For this preview, we use a placeholder "Widget" area. 
-           In a real scenario, you would paste your Elfsight or LightWidget code here. */
-        .instagram-sync-box {
-            background: #222;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slideshow-frame {
-            width: 100%;
-            max-width: 600px;
-            height: 600px;
-            position: relative;
-            overflow: hidden;
-            border: 10px solid #fff;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .slide.active {
-            opacity: 1;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 30px;
-            font-size: 0.8rem;
-            color: #666;
-            border-top: 1px solid #333;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            .slideshow-frame { height: 400px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEEC AI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>HAIR DO</h1>
-        <div class="subtitle">by ekkles</div>
-    </header>
+<div class="container">
+  <h1>MEEC AI</h1>
 
-    <main id="gallery-container">
-        <p>Live Instagram Feed Syncing...</p>
-        
-        <!-- AUTO-SLIDESHOW SECTION -->
-        <div class="instagram-sync-box">
-            <div class="slideshow-frame" id="slideshow">
-                <!-- These would be replaced by your actual Instagram Images via API -->
-                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522336572468-97b06e8ef143?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1595476108010-b4d1f80d77d2?auto=format&fit=crop&w=800&q=80')"></div>
-            </div>
-            <p style="margin-top: 20px; color: var(--gold);">New posts appear automatically every 5 minutes</p>
-        </div>
-    </main>
+  <div id="chat-box"></div>
 
-    <footer>
-        &copy; 2026 HAIR DO by ekkles. All Rights Reserved.
-    </footer>
+  <div class="input-area">
+    <input type="text" id="user-input" placeholder="Tulis pertanyaan...">
+    <button onclick="sendMessage()">Kirim</button>
+  </div>
+</div>
 
-    <script>
-        // AUTOMATIC SLIDESHOW LOGIC
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const slideInterval = 4000; // 4 seconds per photo
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        setInterval(nextSlide, slideInterval);
-
-        // NOTE ON INSTAGRAM SYNC:
-        // To make this "live" with your real Instagram:
-        // 1. Go to LightWidget.com or Elfsight.com
-        // 2. Connect your Instagram account.
-        // 3. Copy their "Embed Code".
-        // 4. Replace the <div class="instagram-sync-box"> section with that code.
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
